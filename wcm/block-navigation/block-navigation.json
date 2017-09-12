@@ -1,0 +1,144 @@
+{
+    "availableLanguageIds": [
+        "en_US"
+    ],
+    "defaultLanguageId": "en_US",
+    "fields": [
+        {
+            "label": {
+                "en_US": "Länktext"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": ""
+            },
+            "dataType": "string",
+            "indexType": "keyword",
+            "localizable": true,
+            "name": "navItems",
+            "readOnly": false,
+            "repeatable": true,
+            "required": false,
+            "showLabel": true,
+            "type": "text",
+            "nestedFields": [
+                {
+                    "label": {
+                        "en_US": "Extern länk"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "string",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "name": "linkExternal",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "text"
+                },
+                {
+                    "label": {
+                        "en_US": "Länk till sida (intern)"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "link-to-page",
+                    "fieldNamespace": "ddm",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "name": "linkInternal",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "ddm-link-to-page"
+                },
+                {
+                    "label": {
+                        "en_US": "Ikon"
+                    },
+                    "options": [
+                        {
+                            "value": "default",
+                            "label": {
+                                "en_US": "Default"
+                            }
+                        },
+                        {
+                            "value": "play",
+                            "label": {
+                                "en_US": "Play"
+                            }
+                        },
+                        {
+                            "value": "envelope",
+                            "label": {
+                                "en_US": "Brev"
+                            }
+                        },
+                        {
+                            "value": "bulb",
+                            "label": {
+                                "en_US": "Glödlampa"
+                            }
+                        },
+                        {
+                            "value": "phone",
+                            "label": {
+                                "en_US": "Telefon"
+                            }
+                        },
+                        {
+                            "value": "none",
+                            "label": {
+                                "en_US": "Ingen"
+                            }
+                        }
+                    ],
+                    "predefinedValue": {
+                        "en_US": [
+                            ""
+                        ]
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "string",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "multiple": false,
+                    "name": "icon",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "select"
+                }
+            ]
+        }
+    ]
+}

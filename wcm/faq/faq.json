@@ -1,0 +1,82 @@
+{
+    "availableLanguageIds": [
+        "en_US"
+    ],
+    "defaultLanguageId": "en_US",
+    "fields": [
+        {
+            "label": {
+                "en_US": "FAQ Section Title"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "Enter a section title"
+            },
+            "dataType": "string",
+            "indexType": "keyword",
+            "localizable": true,
+            "name": "faqSection",
+            "readOnly": false,
+            "repeatable": true,
+            "required": false,
+            "showLabel": true,
+            "type": "text",
+            "nestedFields": [
+                {
+                    "label": {
+                        "en_US": "Question"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": "Enter question."
+                    },
+                    "dataType": "string",
+                    "indexType": "text",
+                    "localizable": true,
+                    "name": "questions",
+                    "readOnly": false,
+                    "repeatable": true,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "textarea",
+                    "nestedFields": [
+                        {
+                            "label": {
+                                "en_US": "Answer"
+                            },
+                            "predefinedValue": {
+                                "en_US": ""
+                            },
+                            "style": {
+                                "en_US": ""
+                            },
+                            "tip": {
+                                "en_US": "Enter answer."
+                            },
+                            "dataType": "html",
+                            "fieldNamespace": "ddm",
+                            "indexType": "text",
+                            "localizable": true,
+                            "name": "answer",
+                            "readOnly": false,
+                            "repeatable": false,
+                            "required": false,
+                            "showLabel": true,
+                            "type": "ddm-text-html"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

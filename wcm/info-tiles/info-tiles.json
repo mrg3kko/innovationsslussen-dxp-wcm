@@ -1,0 +1,252 @@
+{
+    "availableLanguageIds": [
+        "en_US"
+    ],
+    "defaultLanguageId": "en_US",
+    "fields": [
+        {
+            "label": {
+                "en_US": "Tile-Rubrik"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": ""
+            },
+            "dataType": "string",
+            "indexType": "keyword",
+            "localizable": true,
+            "name": "tiles",
+            "readOnly": false,
+            "repeatable": true,
+            "required": false,
+            "showLabel": true,
+            "type": "text",
+            "nestedFields": [
+                {
+                    "label": {
+                        "en_US": "Beskrivning"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "string",
+                    "indexType": "text",
+                    "localizable": true,
+                    "name": "textContent",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "textarea"
+                },
+                {
+                    "label": {
+                        "en_US": "Länktext"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "string",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "name": "linkText",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "text",
+                    "nestedFields": [
+                        {
+                            "label": {
+                                "en_US": "Extern länk"
+                            },
+                            "predefinedValue": {
+                                "en_US": ""
+                            },
+                            "style": {
+                                "en_US": ""
+                            },
+                            "tip": {
+                                "en_US": ""
+                            },
+                            "dataType": "string",
+                            "indexType": "keyword",
+                            "localizable": true,
+                            "name": "linkExternal",
+                            "readOnly": false,
+                            "repeatable": false,
+                            "required": false,
+                            "showLabel": true,
+                            "type": "text"
+                        },
+                        {
+                            "label": {
+                                "en_US": "Länk till sida (intern)"
+                            },
+                            "predefinedValue": {
+                                "en_US": ""
+                            },
+                            "style": {
+                                "en_US": ""
+                            },
+                            "tip": {
+                                "en_US": ""
+                            },
+                            "dataType": "link-to-page",
+                            "fieldNamespace": "ddm",
+                            "indexType": "keyword",
+                            "localizable": true,
+                            "name": "linkInternal",
+                            "readOnly": false,
+                            "repeatable": false,
+                            "required": false,
+                            "showLabel": true,
+                            "type": "ddm-link-to-page"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": {
+                "en_US": "Separator"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": ""
+            },
+            "dataType": "",
+            "fieldNamespace": "ddm",
+            "indexType": "keyword",
+            "localizable": true,
+            "name": "styling",
+            "readOnly": false,
+            "repeatable": false,
+            "required": false,
+            "showLabel": true,
+            "type": "ddm-separator",
+            "nestedFields": [
+                {
+                    "label": {
+                        "en_US": "Skin"
+                    },
+                    "options": [
+                        {
+                            "value": "default",
+                            "label": {
+                                "en_US": "Default (light blue)"
+                            }
+                        },
+                        {
+                            "value": "blue-heavy",
+                            "label": {
+                                "en_US": "Blue Heavy"
+                            }
+                        },
+                        {
+                            "value": "green-heavy",
+                            "label": {
+                                "en_US": "Green Heavy"
+                            }
+                        },
+                        {
+                            "value": "purple-heavy",
+                            "label": {
+                                "en_US": "Purple Heavy"
+                            }
+                        }
+                    ],
+                    "predefinedValue": {
+                        "en_US": [
+                            ""
+                        ]
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "string",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "multiple": false,
+                    "name": "skin",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "select"
+                },
+                {
+                    "label": {
+                        "en_US": "Justera topp - portlet margin"
+                    },
+                    "predefinedValue": {
+                        "en_US": false
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "boolean",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "name": "adjustTopPortletMargin",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "checkbox"
+                },
+                {
+                    "label": {
+                        "en_US": "Justera topp - content margin"
+                    },
+                    "predefinedValue": {
+                        "en_US": false
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "boolean",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "name": "adjustTopContentMargin",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "checkbox"
+                }
+            ]
+        }
+    ]
+}

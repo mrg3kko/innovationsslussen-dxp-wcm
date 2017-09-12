@@ -1,0 +1,198 @@
+{
+    "availableLanguageIds": [
+        "en_US"
+    ],
+    "defaultLanguageId": "en_US",
+    "fields": [
+        {
+            "label": {
+                "en_US": "Sliderubrik"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": ""
+            },
+            "dataType": "string",
+            "indexType": "keyword",
+            "localizable": true,
+            "name": "slides",
+            "readOnly": false,
+            "repeatable": true,
+            "required": false,
+            "showLabel": true,
+            "type": "text",
+            "nestedFields": [
+                {
+                    "label": {
+                        "en_US": "Beskrivning"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "string",
+                    "indexType": "text",
+                    "localizable": true,
+                    "name": "textContent",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "textarea"
+                },
+                {
+                    "label": {
+                        "en_US": "Länktext"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "string",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "name": "linkText",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "text",
+                    "nestedFields": [
+                        {
+                            "label": {
+                                "en_US": "Extern länk"
+                            },
+                            "predefinedValue": {
+                                "en_US": ""
+                            },
+                            "style": {
+                                "en_US": ""
+                            },
+                            "tip": {
+                                "en_US": ""
+                            },
+                            "dataType": "string",
+                            "indexType": "keyword",
+                            "localizable": true,
+                            "name": "linkExternal",
+                            "readOnly": false,
+                            "repeatable": false,
+                            "required": false,
+                            "showLabel": true,
+                            "type": "text"
+                        },
+                        {
+                            "label": {
+                                "en_US": "Länk till sida (internt)"
+                            },
+                            "predefinedValue": {
+                                "en_US": ""
+                            },
+                            "style": {
+                                "en_US": ""
+                            },
+                            "tip": {
+                                "en_US": ""
+                            },
+                            "dataType": "link-to-page",
+                            "fieldNamespace": "ddm",
+                            "indexType": "keyword",
+                            "localizable": true,
+                            "name": "linkInternal",
+                            "readOnly": false,
+                            "repeatable": false,
+                            "required": false,
+                            "showLabel": true,
+                            "type": "ddm-link-to-page"
+                        }
+                    ]
+                },
+                {
+                    "label": {
+                        "en_US": "Bild"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "document-library",
+                    "fieldNamespace": "ddm",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "name": "image",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "ddm-documentlibrary"
+                },
+                {
+                    "label": {
+                        "en_US": "Position - infoblock"
+                    },
+                    "options": [
+                        {
+                            "value": "default",
+                            "label": {
+                                "en_US": "Default (höger)"
+                            }
+                        },
+                        {
+                            "value": "left",
+                            "label": {
+                                "en_US": "Vänster"
+                            }
+                        },
+                        {
+                            "value": "center",
+                            "label": {
+                                "en_US": "Mitten"
+                            }
+                        }
+                    ],
+                    "predefinedValue": {
+                        "en_US": [
+                            ""
+                        ]
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "string",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "multiple": false,
+                    "name": "infoblockPosition",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "select"
+                }
+            ]
+        }
+    ]
+}
