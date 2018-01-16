@@ -4,16 +4,23 @@
 <#assign group_id = page.getGroupId() />
 <#assign company_id = themeDisplay.getCompanyId() />
 
-<#--
 <#assign layoutLocalService = serviceLocator.findService("com.liferay.portal.kernel.service.LayoutLocalService")>
 
 <#assign blogsPortletId = "33" />
-<#assign blogsPagePlid = portalUtil.getPlidFromPortletId(group_id, page.isPrivateLayout(), blogsPortletId) />
-<#assign blogsLayout = layoutLocalService.getLayout(blogsPagePlid) />
+<#assign blogsPortletId = "com_liferay_blogs_web_portlet_BlogsPortlet" />
 
-<#assign blogPageFriendlyUrl = blogsLayout.getFriendlyURL(locale) />
+<#assign blogsPagePlid = portalUtil.getPlidFromPortletId(group_id, page.isPrivateLayout(), blogsPortletId) />
+
+<#assign blogPageUrl = "" />
 <#assign blogEntryFriendlyUrlPrefix = "/-/blogs/" />
--->
+
+<#if blogsPagePlid != 0>
+  <#assign blogsLayout = layoutLocalService.getLayout(blogsPagePlid) />
+
+  <#if blogsLayout?has_content>
+    <#assign blogPageUrl = portalUtil.getLayoutRelativeURL(blogsLayout, themeDisplay) />
+  </#if>
+</#if>
 
 <div class="blogs-box-listing content-box">
 
@@ -55,11 +62,12 @@
 
   </div>
 
-  <#--
-  <div class="more-link-wrap">
-    <a href="${blogPageFriendlyUrl}" class="more-link">Fler blogginl&auml;gg &raquo;</a>
-  </div>
-  -->
+  <#if blogPageUrl?has_content>
+    <div class="more-link-wrap">
+      <a href="${blogPageUrl}" class="more-link">Fler blogginl&auml;gg &raquo;</a>
+    </div>
+  </#if>
+
 
 </div>
 

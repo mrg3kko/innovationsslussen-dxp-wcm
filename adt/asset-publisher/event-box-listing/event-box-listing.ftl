@@ -8,9 +8,7 @@
 <#assign group_id = page.getGroupId() />
 <#assign company_id = themeDisplay.getCompanyId() />
 
-<#--
-<#assign layoutLocalService = serviceLocator.findService("com.liferay.portal.service.LayoutLocalService")>
--->
+<#assign layoutLocalService = serviceLocator.findService("com.liferay.portal.kernel.service.LayoutLocalService")>
 
 <div class="event-box-listing content-box">
 
@@ -82,19 +80,25 @@
   </div>
 
   <#--
+  -->
   <#if entries?has_content>
     <#assign entry = entries[0] />
     <#assign article = entry.getAssetRenderer().getArticle() />
     <#assign displayPageUuid = article.getLayoutUuid() />
     <#assign displayPage = layoutLocalService.fetchLayoutByUuidAndGroupId(displayPageUuid, group_id, page.isPrivateLayout())! />
     <#if displayPage?has_content>
+      <#--
       <#assign displayPageUrl = displayPage.getFriendlyURL(locale) />
+      -->
+
+      <#assign displayPageUrl = portalUtil.getLayoutRelativeURL(displayPage, themeDisplay) />
+      
       <div class="more-link-wrap">
         <a href="${displayPageUrl}" class="more-link">Fler event &raquo;</a>
       </div>
     </#if>
   </#if>
-  -->
+
 
 </div>
 
