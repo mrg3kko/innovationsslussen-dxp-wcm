@@ -1,3 +1,6 @@
+<#-- Define services -->
+<#assign layoutLocalService = serviceLocator.findService("com.liferay.portal.kernel.service.LayoutLocalService")>
+
 <#assign currentPlid = 0 />
 <#assign currentPlidStr = "0" />
 <#assign themeDisplay = request['theme-display']! />
@@ -34,38 +37,21 @@
 
         <#if linkUrl == "">
           <#if navItem.linkInternal.data ? has_content>
-
             <#assign linkUrl = navItem.linkInternal.getFriendlyUrl() />
 
-            <#if navItem.linkInternal.data == currentPlidStr>
-              <#assign isCurrentPage = true />
+            <#assign linkLayout = getLayoutFromLinkToPage(navItem.linkInternal) />
+            <#if linkLayout?has_content>
+              <#if linkLayout.getPlid() == currentPlid>
+                <#assign isCurrentPage = true />
+              </#if>
             </#if>
-
-
           </#if>
         </#if>
-
-        <#-- Logic for isCurrentPage not working. Needs to be updated. -->
-        <#assign isCurrentPage = false />
 
         <#if !isCurrentPage>
           <li class="${cssClass}">
             <a href="${linkUrl}">
               <span>
-                <#--
-                ${navItem.data} (${navItem.linkInternal.getLayoutId()?string} vs ${currentPlidStr})
-                ${navItem.data} (${navItem.linkInternal.getLayoutType()} vs ${currentPlidStr})
-                -->
-                <#--
-                <#assign attrMap = navItem.linkInternal.getAttributes() />
-                <#assign attributesString = "" />
-                <#list attrMap?keys as attr>
-                  <#assign attributesString = attributesString + ", " + attrMap[attr] />
-                </#list>
-                -->
-                <#--
-                ${navItem.data} (${navItem.linkInternal.getLayoutGroupId()})
-                -->
                 ${navItem.data}
               </span>
             </a>
@@ -77,3 +63,32 @@
   </nav>
 
 </#if>
+
+<#--
+	Macro getLayoutFromLinkToPage
+	Parameter linkToPage = an article structure element of the type LinkToPage
+	Returns Layout
+-->
+<#function getLayoutFromLinkToPage linkToPage>
+
+  <#local linkLayout = "" />
+
+  <#if linkToPage.data?has_content>
+  	<#local linkData = linkToPage.data?split("@") />
+
+  	<#local linkLayoutId =  getterUtil.getLong(linkData[0]) />
+
+  	<#local linkLayoutIsPrivate =  false />
+  	<#if linkData[1] == "private">
+  		<#local linkLayoutIsPrivate = true />
+  	</#if>
+
+  	<#local linkLayoutGroupId = getterUtil.getLong(linkData[2]) />
+
+  	<#local linkLayout = layoutLocalService.getLayout(linkLayoutGroupId, linkLayoutIsPrivate, linkLayoutId) />
+
+  </#if>
+
+	<#return linkLayout />
+
+</#function>
